@@ -23,9 +23,14 @@ else
 fi
 
 cp TestListExamples.java grading-area
-cp GradeServer.java grading-area
-
 cp -r lib grading-area
 cd grading-area
 
-javac -cp '.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar' *.java
+# javac *.java
+# javac TestListExamples.java
+
+javac -cp $CPATH *.java
+java -cp $CPATH org.junit.runner.JUnitCore TestListExamples
+
+# java grading-area/ListExamples
+# java grading-area/TestListExamples
